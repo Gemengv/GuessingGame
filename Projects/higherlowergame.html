@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Number Guessing Game</title>
+
+    </head>
+    <body>
+        <h1>Number Guessing Game</h1>
+
+        <p>Guess a number between 1 and 20. </p>
+
+        <div class="form">
+            <label for="guessField">Enter a guess:</label>
+            <input type="text" id="guessField" class="guessField">
+            <input type="submit" value="Submit guess" class="guessSubmit" id="submitguess">
+
+        </div>
+
+        <script type = "text/javascript">
+            //Generate random value
+            let num = Math.floor(Math.random() * 20) + 1;
+
+             var guesses = 1;
+                    guesses++;
+            document.getElementById("submitguess").onclick = function(){
+
+                    var guess = document.getElementById("guessField").value;
+
+                 let message = document.getElementById("message");
+
+                if(guess == num) {
+                    alert("You got it! It took " + guesses + " trys!"); 
+                 }  
+                else if (guess > num) {
+                    guesses++;
+                  alert("No, try a lower number.");
+                 }
+                else {
+                    guesses++;
+                  alert("No, try a higher number.");
+                  }
+                }
+                  
+        </script>
+    </body>
+</html>
